@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>mijn restaurantmenu</title>
+        <link rel="stylesheet" href="menu.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><img src="restaurant.jpg"></td>
+                <td><div id="headerlogo">Mijn restaurant</div></td>
+            </tr>
+        </table>
+        
+        
+    <h1>Menu</h1>
+
+    <form id="orderform" action="bon.html" method="GET">
+        <h3>Voorgerechten</h3>
+        <ul>
+            <li><input type="checkbox" name="menuitem[]" value="Baguette,4.75"><strong>Baguette</strong>
+            <em>Geserveerd met kruidenknoflookboter, tomatentapenade en Aioli</em>
+            € 4,75
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="Rundercarpaccio,11.50"><strong>Rundercarpaccio</strong>
+        <em>Dungesneden biefstuk met truffelmayonaise, oude kaas, rucola, geroosterde pijnboompitjes en stokbrood</em>
+        € 11,50
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="Geitenkaas,8.50"><strong>Crème Brûlée van geitenkaas</strong>
+        <em>Gekarameliseerde geitenkaas geserveerd op een bedje van rucola, tomaat, komkommer, geroosterde pijnboompitjes en stokbrood</em>
+        € 8,50
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="Tomatensoep,5.75"><strong>Tomatensoep</strong>
+        <em>Geroosterde tomaat, gepofte knoflook, basilicum en oregano geserveerd met een vleugje crème fraîche en stokbrood</em>
+        € 5,75
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="Soep van de dag,5.75"><strong>Soep van de dag</strong>
+        <em>Wisselende soep geserveerd met stokbrood</em>
+        € 5,75
+        </li>
+        </ul>
+
+        <h3>Hoofdgerechten</h3>
+
+        <ul>
+        <li><input type="checkbox" name="menuitem[]" value="Surf and Turf,25.50"><strong>Surf and Turf</strong>
+        <em>Gegrilde kogelbiefstuk met gebakken black tiger garnalen in een kruidige roomsaus</em>
+        € 25,50
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="Kogelbiefstuk,21.50"><strong>Kogelbiefstuk op de lavagrill gebakken</strong>
+        <em>Gegrilde kogelbiefstuk, geserveerd met gebakken knoflookchampignons</em>
+        € 21,50
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="'Groninger rund',18.50"><strong>Runderstoofpotje van Groninger weiderund</strong>
+        <em>Groninger weiderund gestoofd in rode wijn met uien, wortel en knoflook</em>
+        € 18,50
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="xxl wrap',14.50"><strong>XXL vegetarische wrap</strong>
+        <em>Grote wrap gevuld met gebakken groente, kaas en crème fraîche</em>
+        € 14,50
+        </li>
+        </ul>
+
+        <strong>Onze gerechten worden naar keuze geserveerd met salade en huisgemaakte friet of gebakken aardappelen:</strong>
+        <input type="checkbox" name="sidesalad">salade</input>
+        <input type="radio" name="potatoside" value="friet" checked>Friet</input>
+        <input type="radio" name="potatoside" value="aardappelen">Aardappelen</input>
+
+        <h3>Nagerechten</h3>
+
+        <ul>
+        <li><input type="checkbox" name="menuitem[]" value="Warme kersen',7.50"><strong>Warme kersen</strong>
+        <em>Kersen in een lichtgebonden saus van kersen geserveerd met bourbon vanille ijs en slagroom</em>
+        € 7,50</li>
+        <li><input type="checkbox" name="menuitem[]" value="Huisgemaakte brownie',7.00"><strong>Huisgemaakte brownie</strong>
+        <em>Brownie uit eigen keuken geserveerd met een bol mango-sorbetijs en slagroom</em>
+        € 7,00
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="Strawberry cheesecake',7.00"><strong>Strawberry cheesecake ice cream</strong>
+        <em>Twee bollen roomijs gemaakt van strawberry cheesecake geserveerd met slagroom</em>
+        € 7,00
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="Maple walnut',7.00"><strong>Maple walnut</strong>
+        <em>Twee bollen walnootijs waarbij maple (ahorn) siroop gebruikt is, geserveerd op een toffee karamel gevuld met walnoten en slagroom</em>
+        € 7,00
+        </li>
+        <li><input type="checkbox" name="menuitem[]" value="Dame Blanche',7.00"><strong>Dame Blanche</strong>
+        <em>Twee bollen Bourbon vanille ijs geserveerd met gesmolten pure chocolade, geroosterde amandelschaafsel en slagroom</em>
+        € 7,00
+        </li>
+        </ul>
+        <strong>Alle prijzen zijn inclusief BTW</strong>
+        <input type="submit" value="Naar Bon" class="button">
+    </form>
+
+    <div id="bon"></div>
+
+    <script>
+    var order = document.getElementById("orderform");
+        order.onsubmit = function() {
+        /* order is de volledige formulier. Het post-object heb ik nog niet kunnen benaderen. */
+        var bon = document.getElementById("bon");
+         bon.innerHTML="<p>Hier komt straks de bon</p>";
+    }
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body{
+    background-color: #9c1210;
+    color: azure;
+    
+}
+
+ul{
+    background-color: #eda6a6;
+    color: black;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    width: 15cm;
+    height: 10cm;
+    border: 2px solid white;
+}
+
+.button{
+    background-color: red;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#headerlogo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 60px;
+}

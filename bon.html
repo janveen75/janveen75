@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.4.1.js"></script> 
+    <title>Uw restaurantbon</title>
+</head>
+<body>
+    <h1>Mijn Restaurant</h1>
+    <h2>Bon</h2>
+    <div id="menuitems"></div>
+</h4>Dank voor uw bestelling</h4>
+<script type="text/javascript">
+menu = "";
+var raw_url = window.location.href;
+var dec_url = decodeURIComponent(raw_url);
+
+var urlsplit = dec_url.split("?");
+var querystring = urlsplit[1];
+var querysplit = querystring.split("&");
+
+for(i=0;i<querysplit.length;i++){
+    var item = querysplit[i];
+    var itemsplit = item.split("=")
+    querysplit[i]=itemsplit;
+}
+
+
+var prijs = 0;
+var menu = "<table>"
+for(i=0;i<querysplit.length;i++){
+    if(querysplit[i][0] == "menuitem[]"){
+        var product = querysplit[i][1];
+        product.replace("["," ");
+        product.replace("]"," ");
+        var product_prijs = product.split(",");
+        var prod = product_prijs[0];
+        var prijs = product_prijs[1];
+        menu = menu + prod + "  " + prijs + "<br>";
+        menu = menu + "<tr><td>"+ prod+"</td><td>"+prijs+"</td><tr>";
+        
+    }else{
+        if(querysplit[i][0] == "potatoside"){
+            menu = menu + "<tr><td>"+ querysplit[i][1]+"</td><td></td></tr>";
+        }
+        if(querysplit[i][0] == "sidesalad"){
+            menu = menu + "<tr><td>salade</td><td></td><tr>";
+        }
+    }
+}
+menu = menu + "</table>"
+var items = document.getElementById("menuitems");
+items.innerHTML = menu;
+</script>
+</body>
+</html>
